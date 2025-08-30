@@ -6,7 +6,7 @@ from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
-import xorq as xo
+import xorq.api as xo
 from xorq.expr.ml.structer import (
     Structer,
     structer_from_instance,
