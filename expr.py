@@ -11,7 +11,7 @@ from xorq.expr.ml.structer import (
     Structer,
     structer_from_instance,
 )
-from xorq.caching import ParquetStorage
+from xorq.caching import ParquetCache
 from xorq.expr.ml.pipeline_lib import (
     Pipeline,
 )
@@ -38,7 +38,7 @@ def gen_splits(expr, test_size=.2, random_seed=42, **split_kwargs):
     )
 
 
-def get_digits_splits(storage=None, **split_kwargs):
+def get_digits_splits(cache=None, **split_kwargs):
     t = xo.deferred_read_csv(
         con=xo.duckdb.connect(),
         path=str(resources.files("sklearn.datasets.data") / "digits.csv.gz"),
@@ -48,7 +48,7 @@ def get_digits_splits(storage=None, **split_kwargs):
     )
     (train, test) = (
         expr
-        .cache(storage or ParquetStorage())
+        .cache(cache or ParquetCache.from_kwargs())
         for expr in gen_splits(t, **split_kwargs)
     )
     return (train, test)
