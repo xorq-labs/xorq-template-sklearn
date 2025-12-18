@@ -96,6 +96,7 @@ def _(instance, expr, features=None):
 params = {
     "pca__n_components": 5,
     "logistic__C": 1E-4,
+    "logistic__penalty": "l2",
 }
 (train, test) = get_digits_splits()
 sklearn_pipeline = make_pipeline(params=params)
