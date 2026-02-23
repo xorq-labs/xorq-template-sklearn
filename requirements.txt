@@ -248,10 +248,12 @@ cityhash==0.4.9 ; python_full_version < '4' \
     --hash=sha256:fdfacb03f7828b34749a529428fa6e70ca975c8f21b6c0e1228f0bab812d8cd5 \
     --hash=sha256:fe89d80d6f9552402ba7ec9dc701f31a2747b4e31dc0cb3313bb9db825902b6e
     # via xorq
-click==8.2.1 ; python_full_version < '4' \
+click==8.2.1 \
     --hash=sha256:27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202 \
     --hash=sha256:61a3265b914e850b85317d0b3109c7f8cd35a670f963866005d6ef1d5175a12b
-    # via dask
+    # via
+    #   dask
+    #   xorq
 cloudpickle==3.1.1 \
     --hash=sha256:b216fa8ae4019d5482a8ac3c95d8f6346115d8835911fd4aefd1a445e4242c64 \
     --hash=sha256:c8c5a44295039331ee9dad40ba100a9c7297b6f988e50e87ccdf3765a668350e
@@ -474,6 +476,14 @@ gcsfs==2025.7.0 \
 geoarrow-types==0.3.0 ; python_full_version < '4' \
     --hash=sha256:439df6101632080442beccc7393cac54d6c7f6965da897554349e94d2492f613 \
     --hash=sha256:82243e4be88b268fa978ae5bba6c6680c3556735e795965b2fe3e6fbfea9f9ee
+    # via xorq
+gitdb==4.0.12 \
+    --hash=sha256:5ef71f855d191a3326fcfbc0d5da835f26b13fbcba60c32c21091c349ffdb571 \
+    --hash=sha256:67073e15955400952c6565cc3e707c554a4eea2e428946f7a4c162fab9bd9bcf
+    # via gitpython
+gitpython==3.1.46 \
+    --hash=sha256:400124c7d0ef4ea03f7310ac2fbf7151e09ff97f2a3288d64a440c584a29c37f \
+    --hash=sha256:79812ed143d9d25b6d176a10bb511de0f9c67b1fa641d82097b0ab90398a2058
     # via xorq
 google-api-core==2.25.1 \
     --hash=sha256:8a2a56c1fef82987a524371f99f3bd0143702fecc670c72e600c1cda6bf8dbb7 \
@@ -969,7 +979,9 @@ opentelemetry-exporter-otlp-proto-common==1.36.0 \
 opentelemetry-exporter-otlp-proto-grpc==1.36.0 \
     --hash=sha256:734e841fc6a5d6f30e7be4d8053adb703c70ca80c562ae24e8083a28fadef211 \
     --hash=sha256:b281afbf7036b325b3588b5b6c8bb175069e3978d1bd24071f4a59d04c1e5bbf
-    # via opentelemetry-exporter-otlp
+    # via
+    #   opentelemetry-exporter-otlp
+    #   xorq
 opentelemetry-exporter-otlp-proto-http==1.36.0 \
     --hash=sha256:3d769f68e2267e7abe4527f70deb6f598f40be3ea34c6adc35789bea94a32902 \
     --hash=sha256:dd3637f72f774b9fc9608ab1ac479f8b44d09b6fb5b2f3df68a24ad1da7d356e
@@ -1487,6 +1499,10 @@ six==1.17.0 \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
     # via python-dateutil
+smmap==5.0.2 \
+    --hash=sha256:26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5 \
+    --hash=sha256:b30115f0def7d7531d22a0fb6502488d879e75b260a9db4d0819cfb25403af5e
+    # via gitdb
 sqlglot==25.20.2 \
     --hash=sha256:169fe8308dd70d7bd40117b2221b62bdc7c4e2ea8eb07394b2a6146cdedf05ab \
     --hash=sha256:cdbfd7ce3f2f39f32bd7b4c23fd9e0fd261636a6b14285b914e8def25fd0a567
@@ -1603,7 +1619,7 @@ wcwidth==0.2.13 \
     --hash=sha256:3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859 \
     --hash=sha256:72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5
     # via prompt-toolkit
-xorq @ git+https://github.com/xorq-labs/xorq@950d42d919f801a3f11f85c933e9e524efd32fa0
+xorq @ git+https://github.com/xorq-labs/xorq@3ed851f14ea3f5cb7f72765da4fa043c74432eb2
     # via xorq-template-sklearn
 xorq-datafusion==0.2.5 \
     --hash=sha256:0e4354979c60164fb6f6aff7b116fc938fd5b204629033f7275f29370d18f860 \
