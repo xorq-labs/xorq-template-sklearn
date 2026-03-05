@@ -1650,7 +1650,7 @@ wcwidth==0.2.13 \
     --hash=sha256:3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859 \
     --hash=sha256:72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5
     # via prompt-toolkit
-xorq @ git+https://github.com/xorq-labs/xorq@70f486833cd20fe6a19a3d44ee2aca60715eb170
+xorq @ git+https://github.com/xorq-labs/xorq@964d7b2c6bae4d9daf81728c4508ee20e82acfc9
     # via xorq-template-sklearn
 xorq-datafusion==0.2.5 \
     --hash=sha256:0e4354979c60164fb6f6aff7b116fc938fd5b204629033f7275f29370d18f860 \
